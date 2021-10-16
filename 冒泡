@@ -1,0 +1,39 @@
+#include<stdio.h>
+# define N  10
+int main()
+{
+	int arr[N] = {0};
+	int a, b, c,i;
+	for (i = 0; i < N; i++)
+	{		scanf_s("%d", &arr[i]);
+	}
+	for (b = 0; b < N - 1; b++)
+	{
+		//小的在前
+
+		/*for (c=0; c < N-b-1 ; c++)
+		{
+			if (arr[c] > arr[c + 1])
+			{
+				int g = arr[c + 1];
+				arr[c + 1] = arr[c];
+				arr[c] = g;
+			}
+		}*/
+	//大的在前
+		for (c = 0; c < N - b - 1; c++)
+		{
+			if (arr[c] < arr[c + 1])
+			{
+				int g = arr[c + 1];
+				arr[c + 1] = arr[c];
+				arr[c] = g;
+			}
+
+		}
+	}
+	for (a = 0; a < N; a++)
+		{
+			printf("%d ", arr[a]);
+		}
+}
