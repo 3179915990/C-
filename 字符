@@ -1,0 +1,28 @@
+
+
+int strStr(char * haystack, char * needle){
+    int lens = strlen(needle);
+    int length = strlen(haystack);
+    if(lens == 0)
+    return 0;
+    /*若当前数组加needle的长度已经超出haystack则直接返回*/
+    for(int i = 0;i+lens<=length;i++){
+        bool flag = true;
+        for(int j = 0; j<lens;j++){
+            if(haystack[i+j] != needle[j]){
+                flag = false;
+                break;
+            }
+        }
+        /*i存储符合子串的坐标*/
+        if(flag == true){
+            return i;
+        }
+    }
+    return -1;
+}
+
+作者：qui2zical-archimedestza
+链接：https://leetcode-cn.com/problems/implement-strstr/solution/ge-ren-bi-ji-zai-yi-ge-zi-fu-chuan-zhong-wu9g/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
