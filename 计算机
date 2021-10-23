@@ -1,0 +1,56 @@
+#include<stdio.h>
+int Abb(int x, int y)//加
+{
+	return x + y;
+}
+int Acc(int x, int y)//减法
+{
+	return x - y;
+}
+int Add(int x, int y)
+{
+	return x * y;
+}
+int Aff(int x, int y)
+{
+	return x / y;
+}
+void muen()
+{
+	printf("**************************\n");
+	printf("***********0退出**********\n");
+	printf("****1加法*********2减法***\n");
+	printf("****3乘法*********4除法***\n");
+
+
+}
+int main()
+{
+	int (*p[])(int x, int y) = { 0,Abb,Acc,Add,Aff };
+	int input;
+	int x,y;
+	do
+	{  
+		muen();
+		printf("请选择你要算术方法>>");
+	    scanf_s("%d", &input);
+		char* arr[] = {" ", "加法","减法","乘法","除法" };
+		if (0<input&&input< 5)
+		{
+			printf("   %s\n", arr[input]);
+			printf("请输入两个数用于计算》》");
+			scanf_s("%d%d", &x, &y);
+			int ret = p[input](x, y);
+			printf("运算结果为%d\n", ret);
+		}
+		else if (input == 0)
+		{
+			printf("退出程序");
+		}
+		else
+		{
+			printf("请在0到5之间再次选择算术方式\n");
+		}
+	} while (input);
+}
+
